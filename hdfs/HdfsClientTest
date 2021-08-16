@@ -11,6 +11,9 @@ import java.net.URISyntaxException;
 import java.util.Arrays;
 
 
+/**
+ * @author 连仕杰
+ */
 public class HdfsClientTest {
 
     private FileSystem fs;
@@ -37,14 +40,16 @@ public class HdfsClientTest {
         fs.close();
     }
 
-    // 创建目录
+    /** 创建目录
+     * */
     @Test
-    public void testmkdir() throws URISyntaxException, IOException, InterruptedException {
+    public void testmkdir() throws IOException {
         // 2 创建一个文件夹
         fs.mkdirs(new Path("/ILoveYou"));
     }
 
-    // 上传
+    /**上传
+     * */
     @Test
     public void testPut() throws IOException {
         // 参数一：表示删除原数据； 参数二：是否允许覆盖；参数三：原数据路径； 参数四：目的地路径
@@ -60,7 +65,8 @@ public class HdfsClientTest {
         fos.write("hello world".getBytes());
     }
 
-    // 文件下载
+    /**文件下载
+     * */
     @Test
     public void testGet() throws IOException {
         //参数一：原文件是否删除；参数二：原文件路径HDFS； 参数三：目标地址路径Win ; 参数四：
@@ -69,7 +75,8 @@ public class HdfsClientTest {
                 new Path("D:\\"), false);
     }
 
-    // 删除
+    /**删除
+     * */
     @Test
     public void testRm() throws IOException {
 
@@ -85,7 +92,8 @@ public class HdfsClientTest {
         fs.delete(new Path("/ILoveYou"), true);
     }
 
-    // 文件的更名和移动
+    /**文件的更名和移动
+     * */
     @Test
     public void testmv() throws IOException {
         // 参数1 ：原文件路径； 参数2 ：目标文件路径
@@ -101,7 +109,8 @@ public class HdfsClientTest {
 
     }
 
-    // 获取文件详细信息
+    /**获取文件详细信息
+     * */
     @Test
     public void fileDetail() throws IOException {
 
@@ -130,7 +139,8 @@ public class HdfsClientTest {
         }
     }
 
-    // 判断是文件夹还是文件
+    /** 判断是文件夹还是文件
+     * */
     @Test
     public void testFile() throws IOException {
 
