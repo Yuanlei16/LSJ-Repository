@@ -15,7 +15,7 @@ import java.util.TreeMap;
 import static utils.HbaseUtils.*;
 
 /**
- * @author 连仕杰
+ * @author 连仕杰、杜秋予
  */
 public class Sum {
 
